@@ -54,14 +54,6 @@ def download(path,name):
     image.write(data)
     image.close()
 
-
-
-
-
-
-    pass 
-        
-
     #j=s"\nconsole.dir(cctvCameras);"
     #js=js+"\nreturn (cctvCameras[0]);"
     #result = "my js:"+ int(js2py.eval_js(js))
@@ -78,6 +70,20 @@ def download(path,name):
 url = "https://traffic.houstontranstar.org"
 getCamerasLink(url)
 
-print (cameras[4][7])
-download(cameras[4][7],cameras[4][0])
+
+# print (cameras[1][7])
+# download(cameras[4][7],cameras[4][0])
  
+    
+for i in range(1,len(cameras)):
+    print (cameras[i][7])
+    download(cameras[i][7],cameras[i][0])
+    
+    
+    
+    
+    
+    
+    
+    
+    
