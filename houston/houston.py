@@ -49,7 +49,8 @@ def getCameras(jsfileurl):
 def download(path,name):
     imageurl = "http://www.houstontranstar.org/snapshots/cctv/"+path
     data = urllib.request.urlopen(imageurl).read()
-    imageName = name.replace(" ","_")+".jpg"
+    imageNameTmp = name.replace(" ","_")+".jpg"
+    imageName = imageNameTmp.replace("/","_")
     image = open(imageName,'wb')
     image.write(data)
     image.close()
@@ -77,6 +78,10 @@ getCamerasLink(url)
     
 for i in range(1,len(cameras)):
     print (cameras[i][7])
+    if (cameras[i][7]=="253.jpg" or cameras[i][7]=="417.jpg" or cameras[i][7]=="430.jpg" or cameras[i][7]=="1908.jpg" 
+       or cameras[i][7]=="1909.jpg" or cameras[i][7]=="3211.jpg" or cameras[i][7]=="3223.jpg" or cameras[i][7]=="3204.jpg"
+       or cameras[i][7]=="3206.jpg" or cameras[i][7]=="3207.jpg" or cameras[i][7]=="3107.jpg" or cameras[i][7]=="3227.jpg"):
+        continue
     download(cameras[i][7],cameras[i][0])
     
     
